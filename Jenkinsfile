@@ -21,10 +21,12 @@ pipeline {
 		}
 	}
         stage("Docker build"){
-		script {
-			docker.withRegistry('', 'dockerhub') {
-				def Myflaskapp = docker.build("alexandrkorol/flaskapp:latest")
-				Myflaskapp.push()
+		steps{
+			script {
+				docker.withRegistry('', 'dockerhub') {
+					def Myflaskapp = docker.build("alexandrkorol/flaskapp:latest")
+					Myflaskapp.push()
+				}
 			}
 		}
         }
