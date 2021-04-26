@@ -10,10 +10,11 @@ pipeline {
     tools { terraform 'terraform-14' }
     agent any
     stages {
-        stage('Hello') {
+        stage('GIR Flask app repo clone') {
             steps {
               git branch: 'main', url: "$GIT_REPO_FLASK_APP"
-        }
+        	}
+	}
         stage ('slack send message git checkout'){
 		steps {
 			slackSend channel: '#jenkins', message: 'Git flask app repository cloned successful'
