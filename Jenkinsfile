@@ -1,4 +1,3 @@
-
 pipeline {
 //    triggers {
 //       GenericTrigger (causeString: 'Generic Cause', regexpFilterExpression: '', regexpFilterText: '', token: 'task4-hw47', tokenCredentialId: '')
