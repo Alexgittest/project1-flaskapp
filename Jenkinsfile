@@ -7,7 +7,6 @@ pipeline {
 	  AWS_SECRET_ACCESS_KEY=credentials('AWS_SECRET_ACCESS_KEY_2')
     	  GIT_REPO_FLASK_APP = "https://github.com/Alexgittest/project1-flaskapp.git"
     }
-    tools { terraform 'terraform-14' }
     agent any
     stages {
         stage('GIR Flask app repo clone') {
@@ -35,10 +34,10 @@ pipeline {
 			slackSend channel: '#jenkins', message: 'Docker image build completed and pushed to dockerhub'
 		}
 	}
-        stage ('RUN Terroform job'){
-		steps {
-			build 'Project1-terraform'
-		}
-	}
+//        stage ('RUN Terroform job'){
+//		steps {
+//			build 'Project1-terraform'
+//		}
+//	}
     }
 }
