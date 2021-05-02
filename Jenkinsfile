@@ -5,6 +5,8 @@ pipeline {
     environment {
 	  AWS_ACCESS_KEY_ID=credentials('AWS_ACCESS_KEY_ID_2')
 	  AWS_SECRET_ACCESS_KEY=credentials('AWS_SECRET_ACCESS_KEY_2')
+	  AWS_DEFAULT_REGION="us-east-1"
+	  AWS_TEST_ENV="test-test-test"
     	  GIT_REPO_FLASK_APP = "https://github.com/Alexgittest/project1-flaskapp.git"
     }
     agent any
