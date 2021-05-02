@@ -6,7 +6,7 @@ from datetime import date
 import boto3
 
 # S3 bucket name
-S3_BUCKET="flask_app_bucket"
+S3_BUCKET="alex-flask-app-bucket"
 today = date.today()
 app=Flask(__name__)
 
