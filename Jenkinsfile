@@ -8,7 +8,7 @@ pipeline {
 	  AWS_DEFAULT_REGION="eu-central-1"
     	  GIT_REPO_FLASK_APP = "https://github.com/Alexgittest/project1-flaskapp.git"
     }
-    agent any
+    agent {label 'master' }
     stages {
         stage('GIR Flask app repo clone') {
             steps {
