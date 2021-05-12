@@ -3,10 +3,9 @@ pipeline {
 //       GenericTrigger (causeString: 'Generic Cause', regexpFilterExpression: '', regexpFilterText: '', token: 'task4-hw47', tokenCredentialId: '')
 //             }
     environment {
-	  AWS_ACCESS_KEY_ID=credentials('AWS_ACCESS_KEY_ID_2')
-	  AWS_SECRET_ACCESS_KEY=credentials('AWS_SECRET_ACCESS_KEY_2')
-	  AWS_DEFAULT_REGION="us-east-1"
-	  AWS_TEST_ENV="test-test-test"
+	  AWS_ACCESS_KEY_ID=credentials('AWS_ACCESS_KEY_ID_1')
+	  AWS_SECRET_ACCESS_KEY=credentials('AWS_SECRET_ACCESS_KEY_1')
+	  AWS_DEFAULT_REGION="eu-central-1"
     	  GIT_REPO_FLASK_APP = "https://github.com/Alexgittest/project1-flaskapp.git"
     }
     agent any
@@ -36,10 +35,10 @@ pipeline {
 			slackSend channel: '#jenkins', message: 'Docker image build completed and pushed to dockerhub'
 		}
 	}
-//        stage ('RUN Terroform job'){
-//		steps {
-//			build 'Project1-terraform'
-//		}
-//	}
+        stage ('RUN Terroform job'){
+		steps {
+			build 'Project1-terraform'
+		}
+	}
     }
 }
