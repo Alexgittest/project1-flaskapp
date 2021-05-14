@@ -37,7 +37,9 @@ pipeline {
 	}
         stage ('RUN Terroform job'){
 		steps {
-			build 'Project1-terraform'
+			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+				build 'Project1-terraform'
+			}
 		}
 	}
     }
