@@ -7,6 +7,7 @@ import boto3
 
 # S3 bucket name
 S3_BUCKET="alex-flask-app-bucket"
+ENV22="value22"
 today = date.today()
 app=Flask(__name__)
 
