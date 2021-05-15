@@ -35,12 +35,12 @@ pipeline {
 			slackSend channel: '#jenkins', message: 'Docker image build completed and pushed to dockerhub'
 		}
 	}
- //       stage ('RUN Terroform job'){
-//		steps {
-//			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-//				build 'Project1-terraform'
-//			}
-//		}
-//	}
+        stage ('RUN Terroform job'){
+		steps {
+			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+				build 'Project1-terraform'
+			}
+		}
+	}
     }
 }
