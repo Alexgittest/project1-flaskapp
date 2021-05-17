@@ -7,7 +7,6 @@ import boto3
 
 # S3 bucket name
 S3_BUCKET="alex-flask-app-bucket"
-ENV1="TEST"
 today = date.today()
 app=Flask(__name__)
 
@@ -24,7 +23,7 @@ def index():
         people_str=json.dumps(people_dict)
         str(people_dict).encode()
         obj.put(Body=people_str.encode())
-        return "Add new user \n"
+        return "Added new user \n"
     else:       
         return "Hello it is flask app \n"
 
@@ -34,7 +33,7 @@ def show_user_birthday(username):
     obj = s3.Object(S3_BUCKET, 'birthday.txt')
     data=obj.get()['Body'].read().decode('utf-8')
     people_dict=json.loads(data)
-    birthday="Совпадений не найдено"   
+    birthday="Совпадений не найдено \n"   
     for i in people_dict.keys():
         if i == username:
             birthday=people_dict[i].split(".")
