@@ -7,7 +7,6 @@ import boto3
 
 # S3 bucket name
 S3_BUCKET="alex-flask-app-bucket"
-ENV1="TEST TEST TEST"
 today = date.today()
 app=Flask(__name__)
 
@@ -24,9 +23,9 @@ def index():
         people_str=json.dumps(people_dict)
         str(people_dict).encode()
         obj.put(Body=people_str.encode())
-        return "Add new user"
+        return "Add new user \n"
     else:       
-        return "Hello it is flask app"
+        return "Hello it is flask app \n"
 
 @app.route('/<username>')
 def show_user_birthday(username):
@@ -41,13 +40,13 @@ def show_user_birthday(username):
             dr=date(today.year,int(birthday[1]),int(birthday[0]))
             delta=(today-dr).days
             if 0<delta<3:
-                birthday="ДР было меньше чем 3 дня назад"
+                birthday="ДР было меньше чем 3 дня назад \n"
             elif -3<delta<0:
-                birthday="ДР будет через меньше чем через 3 дня"
+                birthday="ДР будет меньше чем через 3 дня \n"
             elif delta==0:
-                birthday="ДР Сегодня!"
+                birthday="ДР Сегодня! \n"
             else:
-                birthday="ДР еще не скоро"
+                birthday="ДР еще не скоро \n"
     return birthday
 
 if __name__=="__main__":
