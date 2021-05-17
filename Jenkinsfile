@@ -9,6 +9,9 @@ pipeline {
     	  GIT_REPO_FLASK_APP = "https://github.com/Alexgittest/project1-flaskapp.git"
     }
     agent {label 'master' }
+    options {
+        disableConcurrentBuilds()
+    }
     stages {
         stage('GIR Flask app repo clone') {
             steps {
