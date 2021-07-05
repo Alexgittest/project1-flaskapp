@@ -44,7 +44,7 @@ pipeline {
 				build 'Project1-terraform'
 			}
 		}
-*/
 	}
+*/
     }
 }
