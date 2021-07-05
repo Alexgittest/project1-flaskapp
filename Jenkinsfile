@@ -23,7 +23,7 @@ pipeline {
 			slackSend channel: '#jenkins', message: 'Git flask app repository cloned successful'
 		}
 	}
-        stage("Docker build"){
+'''        stage("Docker build"){
 		steps{
 			script {
 				docker.withRegistry('', 'dockerhub') {
@@ -44,6 +44,7 @@ pipeline {
 				build 'Project1-terraform'
 			}
 		}
+'''
 	}
     }
 }
